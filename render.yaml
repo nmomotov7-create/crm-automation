@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: crm-webhook
+    env: python
+    plan: free
+    region: frankfurt  # можно изменить на ближайший регион
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python crm_webhook.py"
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.14.0
